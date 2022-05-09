@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/matteo/dev/github/comp-248-a1/AGGREGATE.h
+
+/Users/matteo/dev/github/comp-248-a1/main.c
+stdio.h
+-
+AGGREGATE.h
+/Users/matteo/dev/github/comp-248-a1/AGGREGATE.h
+
