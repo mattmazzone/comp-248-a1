@@ -84,6 +84,9 @@
 		<Unit filename="/Users/matteo/dev/github/comp-248-a1/AGGREGATE.h">
 			<Option target="comp_248_a1"/>
 		</Unit>
+		<Unit filename="/Users/matteo/dev/github/comp-248-a1/LINKEDLIST.h">
+			<Option target="comp_248_a1"/>
+		</Unit>
 		<Unit filename="/Users/matteo/dev/github/comp-248-a1/main.c">
 			<Option target="comp_248_a1"/>
 		</Unit>

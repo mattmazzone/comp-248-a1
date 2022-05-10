@@ -6,7 +6,12 @@
 #include <stdlib.h>
 
 #include "AGGREGATE.h"
+#include "LINKEDLIST.h"
 
+
+element aasel(atom a){
+
+}
 
 int main() {
     // QUESTION 3
@@ -87,23 +92,6 @@ int main() {
      */
 
 
-    typedef enum { ATOM, LIST } eltype;
-    typedef char atom;
-    struct _listnode;
-
-    typedef struct {
-        eltype type;
-        union {
-            atom a;
-            struct _listnode* l;
-        };
-    } element;
-
-    typedef struct _listnode {
-        element el;
-        struct _listnode* next;
-    } * list;
-    const element NIL = { .type=LIST, .l=NULL };
 
 
 }
