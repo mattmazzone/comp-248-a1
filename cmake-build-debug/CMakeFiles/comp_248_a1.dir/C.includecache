@@ -11,6 +11,10 @@
 /Users/matteo/dev/github/comp-248-a1/main.c
 stdio.h
 -
+time.h
+-
+stdlib.h
+-
 AGGREGATE.h
 /Users/matteo/dev/github/comp-248-a1/AGGREGATE.h
 
