@@ -9,9 +9,7 @@
 #include "LINKEDLIST.h"
 
 
-element aasel(atom a){
 
-}
 
 int main() {
     // QUESTION 3
@@ -91,8 +89,44 @@ int main() {
     }
      */
 
+    // Question 5
+    list arr = malloc(7*sizeof(struct _listnode));
+
+    list n1 = &arr[0], n2 =  &arr[1], n3 = &arr[2], n4 = &arr[3], n5 = &arr[4], n6 = &arr[5], n7 = &arr[6];
+
+    atom aAtom = 'a';
+    atom bAtom = 'b';
+    atom cAtom = 'c';
+    atom dAtom = 'd';
+    atom eAtom = 'e';
+
+    element el = lasel(n1);
 
 
+
+    // Assign Values
+    n1->el = aasel(aAtom);
+    lasel(n2);                      // INNER LIST
+    n3->el = aasel(bAtom);
+    n4->el = aasel(cAtom);
+    n5->el = aasel(dAtom);
+    n6->el = aasel(eAtom);
+
+    //Links
+    n1->next = n2;
+    n2->el.l = n3;
+    n3->next = n4;
+    n4->next = NIL.l;
+    n2->next = n5;
+    n5->next = n6;
+    n6->next = NIL.l;
+    n6->next = n7;
+    n7->el = NIL;
+    n7->next = NULL;
+
+    print(el);
+
+    free(arr);
 
 }
 
