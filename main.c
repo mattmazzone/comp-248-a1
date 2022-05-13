@@ -8,9 +8,6 @@
 #include "AGGREGATE.h"
 #include "LINKEDLIST.h"
 
-
-
-
 int main() {
     // QUESTION 3
     /*
@@ -48,11 +45,11 @@ int main() {
      */
 
     // QUESTION 4
-    /*
+
     float (*aggregates[5])(float* arr, int size) = { &minf, &maxf, &sumf, &avgf,&pseudo_avgf};
 
-    srand(time(NULL));   // Initialization, should only be called once.
-    int r = rand();      // Returns a pseudo-random integer between 0 and RAND_MAX.
+    srand(time(0));   // Initialization, should only be called once.
+
 
     float arr1[10];
     float arr2[20];
@@ -62,8 +59,8 @@ int main() {
 
     for (size_t i = 0; i < sizeof(arr2)/sizeof(arr2[0]); i++){
         if (i < sizeof(arr1)/sizeof(arr1[0])){
-            arr1[i] = rand() % maxRand;
-            arr2[i] = rand() % maxRand;
+            arr1[i] = (float)(rand() % maxRand);
+            arr2[i] = (float)(rand() % maxRand);
         }
         else{
             arr2[i] = rand() % maxRand;
@@ -87,24 +84,27 @@ int main() {
     for (size_t i = 0; i < sizeof(aggregates)/sizeof aggregates[0]; i++){
         printf("%f\n", aggregates[i](arr2, sizeof(arr2)/sizeof(arr2[0])));
     }
-     */
 
+/*
     // Question 5
-    list arr = malloc(7*sizeof(struct _listnode));
 
-    list n1 = &arr[0], n2 =  &arr[1], n3 = &arr[2], n4 = &arr[3], n5 = &arr[4], n6 = &arr[5], n7 = &arr[6];
+    // Allocate memory
+    list arr = malloc(6*sizeof(struct _listnode));
 
+    // Initialize nodes
+    list n1 = &arr[0], n2 =  &arr[1], n3 = &arr[2], n4 = &arr[3], n5 = &arr[4], n6 = &arr[5];
+
+    // Define Atoms
     atom aAtom = 'a';
     atom bAtom = 'b';
     atom cAtom = 'c';
     atom dAtom = 'd';
     atom eAtom = 'e';
 
+    //
     element el = lasel(n1);
 
-
-
-    // Assign Values
+    // Assign values to nodes
     n1->el = aasel(aAtom);
     lasel(n2);                      // INNER LIST
     n3->el = aasel(bAtom);
@@ -112,7 +112,7 @@ int main() {
     n5->el = aasel(dAtom);
     n6->el = aasel(eAtom);
 
-    //Links
+    // Links between nodes
     n1->next = n2;
     n2->el.l = n3;
     n3->next = n4;
@@ -120,13 +120,18 @@ int main() {
     n2->next = n5;
     n5->next = n6;
     n6->next = NIL.l;
-    n6->next = n7;
-    n7->el = NIL;
-    n7->next = NULL;
 
+    // Question 7 Output
     print(el);
+    printf("\n");
+    printf("%c", car(el).a);
+    printf("\n");
+    print(lasel(cdr(el)));
+    printf("\n");
+    print(car(car(el)));
 
-    free(arr);
-
+    // Free allocated memory
+    lfreer(arr);
+*/
 }
 

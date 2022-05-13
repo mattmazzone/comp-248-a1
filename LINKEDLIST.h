@@ -73,19 +73,50 @@ list cons(element e, list l) {
 
 
 list append(list l1, list l2) {
-    list newList = malloc(sizeof(struct _listnode));
+    if (l1 == NULL) {
+        return l2;
+    } else if (l2 == NULL) {
+        return l1;
+    }
+    
+    int length1 = 0, length2 = 0;
+    list temp = l1;
+    while (temp->next != NULL) {
+        temp = temp->next;
+        length1++;
+    }
+    temp = l2;
+    while (temp->next != NULL) {
+        temp = temp->next;
+        length2++;
+    }
 
+    list newList = malloc((length1 + length2) * sizeof(struct _listnode));
 
+    temp = l1;
+    for (size_t i = 0; i < length1; i++) {
+        newList[i] = *temp;
+        temp = temp->next;
+        newList[i].next = newList + i + 1;
+    }
 
-
+    temp = l2;
+    for (size_t i = length1; i < length1 + length2; i++) {
+        newList[i] = *temp;
+        temp = temp->next;
+        if (i == length1 + length2 - 1) {
+            newList[i].next = NULL;
+        } else {
+            newList[i].next = newList + i + 1;
+        }
+    }
     return newList;
 }
-/*
- *
-void lfreer(list l) {
 
+void lfreer(list l) {
+    free(l);
 }
-*/
+
 void print(element e) {
     if (e.type == ATOM) {
         printf(" %c ", e.a);
@@ -99,13 +130,12 @@ void print(element e) {
 
 
         list current = e.l;
-        while(current != NULL) {
+        while (current != NULL) {
             print(current->el);
             current = current->next;
         }
         printf(")");
     }
-
 
 }
 
